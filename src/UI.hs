@@ -19,6 +19,8 @@ import qualified Graphics.Vty as V
 import Linear.V2 (V2(..))
 import Lens.Micro ((^.))
 
+import Graphics.Vty
+
 -- Types
 -- | Ticks mark passing of time
 --
@@ -139,4 +141,6 @@ playGame = do
     threadDelay (max (65000 - c' * 10) 35000)
     -- threadDelay 35000
   g <- initGame 0
-  customMain (V.mkVty V.defaultConfig) (Just chan) app g
+  cfg <- standardIOConfig
+  vty <- mkVty cfg
+  customMain vty (V.mkVty V.defaultConfig) (Just chan) app g

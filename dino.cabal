@@ -18,7 +18,7 @@ library
   exposed-modules:     Dino
                      , Controls
                      , UI
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base
                      , brick
                      , containers
                      , linear
@@ -33,7 +33,7 @@ executable dino
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -Wall -fno-warn-unused-do-bind -O3
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base
                      , dino
                      , directory
                      , filepath
