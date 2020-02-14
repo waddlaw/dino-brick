@@ -1,0 +1,49 @@
+name: stack
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - '*'
+  schedule:
+    - cron: "00 15 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+    strategy:
+      matrix:
+        ghc: ["8.6.5"]
+        cabal: ["3.0"]
+        resolver: ["lts-14"]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-haskell@v1
+      with:
+        ghc-version: ${{ matrix.ghc }}
+        cabal-version: ${{ matrix.cabal }}
+
+    - name: Display stack version
+      run: stack --version
+
+    - name: Cache ~/.stack
+      uses: actions/cache@v1.1.2
+      with:
+        path: ~/.stack
+        key: ${{ runner.os }}-${{ matrix.resolver }}-v1-stack
+
+    # - name: Install libralies
+    #   run: |
+    #     sudo apt-get update
+    #     sudo apt-get install -y freeglut3-dev
+
+    - name: Install dependencies
+      run: stack test --only-dependencies --resolver ${{ matrix.resolver }}
+
+    - name: Build
+      run: |
+        stack build --fast
+        stack install --fast
