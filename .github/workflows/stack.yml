@@ -12,19 +12,16 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    name: ${{ matrix.os }} (${{ matrix.resolver }})
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        ghc: ["8.6.5"]
-        cabal: ["3.0"]
-        resolver: ["lts-14"]
+        os: [ubuntu-18.04, macos-10.15]
+        resolver: ["lts-14", "nightly"]
 
     steps:
     - uses: actions/checkout@v2
-    - uses: actions/setup-haskell@v1
-      with:
-        ghc-version: ${{ matrix.ghc }}
-        cabal-version: ${{ matrix.cabal }}
+    - uses: mstksg/setup-stack@v2
 
     - name: Display stack version
       run: stack --version
@@ -35,15 +32,10 @@ jobs:
         path: ~/.stack
         key: ${{ runner.os }}-${{ matrix.resolver }}-v1-stack
 
-    # - name: Install libralies
-    #   run: |
-    #     sudo apt-get update
-    #     sudo apt-get install -y freeglut3-dev
-
     - name: Install dependencies
       run: stack test --only-dependencies --resolver ${{ matrix.resolver }}
 
     - name: Build
       run: |
-        stack build --fast
-        stack install --fast
+        stack test --fast --resolver ${{ matrix.resolver }}
+        stack install --fast --resolver ${{ matrix.resolver }}
