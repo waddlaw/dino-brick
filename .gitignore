@@ -6,4 +6,4 @@
 *.tmp
 .DS_STORE
 .stack-work
-dist-newstyle
+dist-*
