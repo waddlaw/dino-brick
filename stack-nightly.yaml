@@ -1,3 +1,6 @@
 resolver: lts-15.0 # dummy
 packages:
 - '.'
+extra-deps:
+- linear-1.20.9@sha256:6a3eb733cae5a233a026cf6310f6e72418c584a716b8cd66d4d715c1773fce8d,4231
+- vty-5.26@sha256:7b1aeebff12d9c8ad43fe997ee0e29cd651eff2d5a0aeceeb9df2ee68efe9c53,20307
