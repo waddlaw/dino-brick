@@ -28,7 +28,7 @@ jobs:
       run: stack --version
 
     - name: Cache ~/.stack
-      uses: actions/cache@v1.1.2
+      uses: actions/cache@v1
       with:
         path: ~/.stack
         key: ${{ runner.os }}-${{ matrix.resolver }}-${{ matrix.cache-version }}-stack
