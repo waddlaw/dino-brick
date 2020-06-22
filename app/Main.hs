@@ -4,7 +4,6 @@ import UI (playGame)
 import Dino (Game(..))
 
 import Control.Monad (when)
-import Data.Monoid ((<>))
 import System.Exit (exitSuccess)
 import Text.Read (readMaybe)
 

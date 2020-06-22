@@ -10,10 +10,11 @@ copyright:          Copyright: (c) 2017 Matt Lim
 category:           Web
 build-type:         Simple
 extra-source-files: README.md
-tested-with:        GHC ==8.6.5 || ==8.8.2
+tested-with:        GHC ==8.6.5 || ==8.8.3 || ==8.10.1
 
 common common
-  build-depends:    base >=4.12 && <4.14
+  build-depends:    base >=4.12 && <4.15
+  ghc-options:      -Wall
   default-language: Haskell2010
 
 library
@@ -25,9 +26,9 @@ library
     UI
 
   build-depends:
-    , brick         ^>=0.47 || ^>=0.52
+    , brick         >=0.47 && <0.48 || >=0.52 && <0.55
     , containers    ^>=0.6
-    , linear        ^>=1.20
+    , linear        ^>=1.21
     , microlens     ^>=0.4
     , microlens-th  ^>=0.4
     , MonadRandom   ^>=0.5
@@ -38,7 +39,7 @@ executable dino
   import:         common
   hs-source-dirs: app
   main-is:        Main.hs
-  ghc-options:    -threaded -Wall -fno-warn-unused-do-bind -O3
+  ghc-options:    -O2
   build-depends:
     , dino
     , directory             ^>=1.3

@@ -134,7 +134,7 @@ counter = unsafePerformIO (newIORef 0)
 playGame :: IO Game
 playGame = do
   chan <- newBChan 10
-  forkIO $ forever $ do
+  _ <- forkIO $ forever $ do
     modifyIORef counter (+1)
     c' <- readIORef counter
     writeBChan chan Tick

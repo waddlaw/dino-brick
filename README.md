@@ -2,6 +2,7 @@
 
 ![stack](https://github.com/haskell-game-archives/dino-brick/workflows/stack/badge.svg)
 ![cabal](https://github.com/haskell-game-archives/dino-brick/workflows/cabal/badge.svg)
+![lint](https://github.com/haskell-game-archives/dino-brick/workflows/lint/badge.svg)
 
 Chrome's no-wifi dino game lazily ported to the terminal
 
