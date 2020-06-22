@@ -1,3 +1,5 @@
 resolver: lts-14.27 # ghc-8.6.5
 packages:
 - '.'
+extra-deps:
+- linear-1.21@sha256:4de02e35f12a340d731aa81ef5225ba8046471cf035fd304bcf1008f8b09a4d1,4274

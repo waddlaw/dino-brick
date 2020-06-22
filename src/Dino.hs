@@ -1,16 +1,15 @@
-{-# LANGUAGE TemplateHaskell, RankNTypes #-}
+{-# LANGUAGE RankNTypes #-}
+{-# LANGUAGE TemplateHaskell #-}
 
 module Dino where
 
 import qualified Data.Map as M
 import Data.Ratio ((%))
 import Control.Monad.Random
-import Control.Monad (guard)
 import Data.Maybe (fromMaybe)
 import Lens.Micro.TH (makeLenses)
 import Lens.Micro ((&), (.~), (%~), (^.))
 import Linear.V2 (V2(..))
-import System.Random (Random(..), randomRs, newStdGen)
 import qualified Data.Sequence as S
 import Data.Sequence(ViewR(..), ViewL(..), viewr, viewl, (|>))
 import Data.Monoid (Any(..), getAny)
@@ -398,13 +397,3 @@ difficultyMap = do
 weightedList :: RandomGen g => g -> [(a, Rational)] -> [a]
 weightedList gen weights = evalRand m gen
     where m = sequence . repeat . fromList $ weights
-
-instance Random a => Random (V2 a) where
-  randomR (V2 x1 y1, V2 x2 y2) g =
-    let (x, g')  = randomR (x1, x2) g
-        (y, g'') = randomR (y1, y2) g'
-     in (V2 x y, g'')
-  random g =
-    let (x, g')  = random g
-        (y, g'') = random g'
-     in (V2 x y, g'')

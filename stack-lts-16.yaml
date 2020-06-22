@@ -2,5 +2,5 @@ resolver: lts-16.2 # ghc-8.8.3
 packages:
 - '.'
 extra-deps:
-- linear-1.20.9@sha256:6a3eb733cae5a233a026cf6310f6e72418c584a716b8cd66d4d715c1773fce8d,4231
+- linear-1.21@sha256:4de02e35f12a340d731aa81ef5225ba8046471cf035fd304bcf1008f8b09a4d1,4274
 - vty-5.26@sha256:7b1aeebff12d9c8ad43fe997ee0e29cd651eff2d5a0aeceeb9df2ee68efe9c53,20307
