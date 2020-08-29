@@ -45,6 +45,5 @@ jobs:
       env:
         STACK_YAML: stack-${{ matrix.resolver }}.yaml
       run: |
-        stack setup --reinstall
         stack test --fast
         stack install --fast
