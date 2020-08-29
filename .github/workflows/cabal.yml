@@ -3,7 +3,7 @@ name: cabal
 on:
   push:
     branches:
-      - 'master'
+      - 'dino'
   pull_request:
     branches:
       - '*'
