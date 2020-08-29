@@ -10,7 +10,7 @@ copyright:          Copyright: (c) 2017 Matt Lim
 category:           Web
 build-type:         Simple
 extra-source-files: README.md
-tested-with:        GHC ==8.6.5 || ==8.8.3 || ==8.10.1
+tested-with:        GHC ==8.6.5 || ==8.8.4 || ==8.10.2
 
 common common
   build-depends:    base >=4.12 && <4.15
@@ -26,14 +26,14 @@ library
     UI
 
   build-depends:
-    , brick         >=0.47 && <0.48 || >=0.52 && <0.55
+    , brick         >=0.47 && <0.48 || >=0.52 && <0.56
     , containers    ^>=0.6
     , linear        ^>=1.21
     , microlens     ^>=0.4
     , microlens-th  ^>=0.4
     , MonadRandom   ^>=0.5
-    , random        ^>=1.1
-    , vty           >=5.25 && <5.27
+    , random        >=1.1  && <1.3
+    , vty           >=5.25 && <5.31
 
 executable dino
   import:         common
@@ -44,4 +44,4 @@ executable dino
     , dino
     , directory             ^>=1.3
     , filepath              ^>=1.4
-    , optparse-applicative  >=0.14 && <0.16
+    , optparse-applicative  >=0.14 && <0.17

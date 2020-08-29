@@ -3,24 +3,10 @@
 # For more information, please see the documentation at:
 #   https://docs.haskellstack.org/en/stable/lock_files
 
-packages:
-- completed:
-    hackage: linear-1.21@sha256:4de02e35f12a340d731aa81ef5225ba8046471cf035fd304bcf1008f8b09a4d1,4274
-    pantry-tree:
-      size: 2211
-      sha256: 9910b4e6652fa7780f97eef7e91f5c55ca05517511761cbd088bf898ed3cb005
-  original:
-    hackage: linear-1.21@sha256:4de02e35f12a340d731aa81ef5225ba8046471cf035fd304bcf1008f8b09a4d1,4274
-- completed:
-    hackage: vty-5.26@sha256:7b1aeebff12d9c8ad43fe997ee0e29cd651eff2d5a0aeceeb9df2ee68efe9c53,20307
-    pantry-tree:
-      size: 4868
-      sha256: c5ea5bd3e38f2f3ef4a48af6c2a5c4a4ce2e06007ed70e562e74e76101536ea7
-  original:
-    hackage: vty-5.26@sha256:7b1aeebff12d9c8ad43fe997ee0e29cd651eff2d5a0aeceeb9df2ee68efe9c53,20307
+packages: []
 snapshots:
 - completed:
-    size: 502299
-    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2020/6/22.yaml
-    sha256: 3b16e1f2e6d77dace4d39e0e1f33205474dafeaf492e9b0d8936a74450db55df
-  original: nightly-2020-06-22
+    size: 526494
+    url: https://raw.githubusercontent.com/commercialhaskell/stackage-snapshots/master/nightly/2020/8/29.yaml
+    sha256: da287e5831cd98732fda2c1613c5e430355398adea73a55c05b90208b3216604
+  original: nightly-2020-08-29
