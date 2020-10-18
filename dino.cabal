@@ -20,26 +20,27 @@ common common
 library
   import:          common
   hs-source-dirs:  src
+
+  -- cabal-fmt: expand src
   exposed-modules:
     Controls
     Dino
     UI
 
   build-depends:
-    , brick         >=0.47 && <0.48 || >=0.52 && <0.56
+    , brick         >=0.47 && <0.48 || >=0.52 && <0.58
     , containers    ^>=0.6
     , linear        ^>=1.21
     , microlens     ^>=0.4
     , microlens-th  ^>=0.4
     , MonadRandom   ^>=0.5
     , random        >=1.1  && <1.3
-    , vty           >=5.25 && <5.31
+    , vty           >=5.25 && <5.32
 
 executable dino
-  import:         common
-  hs-source-dirs: app
-  main-is:        Main.hs
-  ghc-options:    -O2
+  import:        common
+  main-is:       app/Main.hs
+  ghc-options:   -O2
   build-depends:
     , dino
     , directory             ^>=1.3

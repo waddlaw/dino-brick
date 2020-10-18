@@ -1,21 +1,20 @@
 module Main where
 
-import UI (playGame)
+import Control.Monad
 import Dino (Game(..))
-
-import Control.Monad (when)
-import System.Exit (exitSuccess)
-import Text.Read (readMaybe)
-
 import Options.Applicative
 import qualified System.Directory as D
-import System.FilePath ((</>))
+import System.Exit
+import System.FilePath
+import Text.Read
+import UI
 
-newtype Opts = Opts { score :: Bool }
+newtype Opts = Opts {score :: Bool}
 
 opts :: Parser Opts
-opts = Opts
-  <$> switch (long "high-score" <> short 's' <> help "Print highscore and exit")
+opts =
+  Opts
+    <$> switch (long "high-score" <> short 's' <> help "Print highscore and exit")
 
 dinoHeader :: String
 dinoHeader = "Dino - a subpar ripoff of chrome's infinite scroller"
@@ -54,8 +53,8 @@ getHighScore = do
   lb <- getLeaderboardFile
   exists <- D.doesFileExist lb
   if exists
-     then readMaybe <$> readFile lb
-     else return Nothing
+    then readMaybe <$> readFile lb
+    else return Nothing
 
 -- Copied from tetris example
 setHighScore :: Int -> IO ()
@@ -73,5 +72,5 @@ getLeaderboardFile = do
 -- Utilities
 -- Copied from tetris example
 printM :: Show a => Maybe a -> IO ()
-printM Nothing  = putStrLn "None"
+printM Nothing = putStrLn "None"
 printM (Just s) = print s

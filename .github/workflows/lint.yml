@@ -3,7 +3,7 @@ name: lint
 on:
   push:
     branches:
-      - 'dino'
+      - 'master'
   pull_request:
     branches:
       - '*'
