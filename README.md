@@ -1,8 +1,8 @@
 # dino
 
-![stack](https://github.com/haskell-game-archives/dino-brick/workflows/stack/badge.svg)
-![cabal](https://github.com/haskell-game-archives/dino-brick/workflows/cabal/badge.svg)
-![lint](https://github.com/haskell-game-archives/dino-brick/workflows/lint/badge.svg)
+[![stack](https://github.com/haskell-game-archives/dino-brick/workflows/stack/badge.svg)](https://github.com/haskell-game-archives/dino-brick/actions?query=workflow%3Astack)
+[![cabal](https://github.com/haskell-game-archives/dino-brick/workflows/cabal/badge.svg)](https://github.com/haskell-game-archives/dino-brick/actions?query=workflow%3Acabal)
+[![lint](https://github.com/haskell-game-archives/dino-brick/workflows/lint/badge.svg)](https://github.com/haskell-game-archives/dino-brick/actions?query=workflow%3Alint)
 
 Chrome's no-wifi dino game lazily ported to the terminal
 

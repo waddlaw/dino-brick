@@ -15,9 +15,9 @@ jobs:
     runs-on: ubuntu-18.04
     strategy:
       matrix:
-        ghc: ["8.6.5", "8.8.4", "8.10.1"]
-        cabal: ["3.2.0.0"]
-        cache-version: ["2020-08-29"]
+        ghc: ["8.6", "8.8", "8.10"]
+        cabal: ["3.2"]
+        cache-version: ["2020-10-18"]
 
     steps:
     - uses: actions/checkout@v2
