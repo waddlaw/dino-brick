@@ -1,6 +1,1 @@
-resolver: nightly-2020-10-18 # ghc-8.10.2
-packages:
-- '.'
-extra-deps:
-- brick-0.55@sha256:f98736eca0cd694837062e06da4655eed969d53b789dfd919716e9b6f5b4c5ce,15858
-- vty-5.30@sha256:4af3938d7b9e6096e222bf52d0ea5d39873bc6fe19febd34106906306af13730,20857
+resolver: nightly-2020-11-22 # ghc-8.10.2
