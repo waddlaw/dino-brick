@@ -1,7 +1,7 @@
 module Main where
 
 import Control.Monad
-import Dino (Game(..))
+import Dino (Game (..))
 import Options.Applicative
 import qualified System.Directory as D
 import System.Exit
