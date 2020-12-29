@@ -10,7 +10,7 @@ copyright:          Copyright: (c) 2017 Matt Lim
 category:           Web
 build-type:         Simple
 extra-source-files: README.md
-tested-with:        GHC ==8.6.5 || ==8.8.4 || ==8.10.2
+tested-with:        GHC ==8.6.5 || ==8.8.4 || ==8.10.3
 
 common common
   build-depends:    base >=4.12 && <4.15
