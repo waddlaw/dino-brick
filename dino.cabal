@@ -28,7 +28,7 @@ library
     UI
 
   build-depends:
-    , brick         >=0.47 && <0.48 || >=0.52 && <0.58
+    , brick         >=0.47 && <0.48 || >=0.52 && <0.59
     , containers    ^>=0.6
     , linear        ^>=1.21
     , microlens     ^>=0.4
